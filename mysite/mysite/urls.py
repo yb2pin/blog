@@ -21,7 +21,7 @@ from blog import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^time/$', current_datetime2),
-    url(r'^time/plus/(\d{1,2})/$', hours_ahead),
-    url(r'^$',views.home),
+    url(r'^(?P<id>\d+)/$', views.detail, name='detail'),
+    url(r'^$',views.home, name='home'),
 ]
 
